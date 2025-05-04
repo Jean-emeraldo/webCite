@@ -1,0 +1,59 @@
+.h-wrapper {
+    background: black;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.h-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.h-container img {
+    border-radius: 50%;
+    width: 100px; 
+    height: auto; 
+}
+
+.h-menu {
+    display: flex;
+    align-items: center;
+}
+
+.h-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.h-menu a:hover {
+    color: blue;
+}
+
+.button {
+    background-color: blue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: darkgreen;
+}
