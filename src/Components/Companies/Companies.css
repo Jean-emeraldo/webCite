@@ -1,0 +1,15 @@
+.c-container img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    filter: invert(30%) sepia(8%) saturate(600%) hue-rotate(180deg) brightness(95%) contrast(90%);
+  }
+  
+  .c-container img:hover {
+    transform: scale(1.2);
+    filter: none;
+  }
+  
+  .c-container {
+    gap: 2rem;
+  }
+  

@@ -1,59 +1,131 @@
-.h-wrapper {
-    background: black;
+:root {
+    --black: #000;
+    --white: #fff;
+    --blue: #4066ff;
+    --dark-blue: #304fca;
+    --green: #2e8b57;
+    --transition: all 0.3s ease;
+    --border-radius: 5px;
+  }
+  
+  .h-wrapper {
+    background: var(--black);
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-}
-
-.h-container {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .h-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.h-container img {
+  }
+  
+  .h-container img {
     border-radius: 50%;
-    width: 100px; 
-    height: auto; 
-}
-
-.h-menu {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .h-container img:hover {
+    transform: scale(1.05);
+  }
+  
+  .h-menu {
     display: flex;
     align-items: center;
-}
-
-.h-menu a {
-    color: white;
+    gap: 1.5rem;
+  }
+  
+  .h-menu a {
+    color: var(--white);
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.h-menu a:hover {
-    color: blue;
-}
-
-.button {
-    background-color: blue;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  .h-menu a:hover {
+    color: var(--blue);
+  }
+  
+  .h-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--blue);
+    transition: var(--transition);
+  }
+  
+  .h-menu a:hover::after {
+    width: 100%;
+  }
+  
+  .button {
+    background-color: var(--blue);
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button a {
-    color: white;
+    transition: var(--transition);
+    margin-left: 0.5rem;
+  }
+  
+  .button a {
+    color: var(--white);
     text-decoration: none;
-    font-size: 16px;
-}
-
-.button:hover {
-    background-color: darkgreen;
-}
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .button:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .h-container {
+      padding: 0.75rem 1.5rem;
+    }
+    
+    .h-menu {
+      gap: 1rem;
+    }
+    
+    .h-menu a {
+      font-size: 0.9rem;
+    }
+    
+    .button {
+      padding: 0.5rem 1rem;
+    }
+    
+    .h-container img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .h-menu a:not(.button a) {
+      display: none;
+    }
+    
+    .h-menu .button {
+      margin-left: 0;
+    }
+  }
